@@ -21,7 +21,7 @@ movies["Score Decile"]=movies["Score"].apply(np.floor)
 movies["Metascore Decile"]=(movies["Metascore"]/10).apply(np.floor)
 movies["Decade"]=((movies["Year"]/10).apply(np.floor))*10
 
-#movies.to_csv("movies_out.csv", index=False)
+movies.to_csv("movies_out.csv", index=False)
 
 # %% Useful lists
 all_genres = movies["Genre1"].append(movies["Genre2"]).append(movies["Genre3"]).dropna().unique().tolist()

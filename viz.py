@@ -25,12 +25,12 @@ import holoviews as hv
 from holoviews import opts, dim
 from bokeh.sampledata.les_mis import data
 from IPython.display import display_html
-from holoviews import layout
 
 hv.extension("bokeh")
 
 #%%
-#sns.pairplot(movies)
+prplt=sns.pairplot(movies)
+prplt.savefig("prplt.png")
 
 # %% score vs metascore
 jnt = sns.jointplot(x="Score",
@@ -70,7 +70,7 @@ chrd = hv.Chord(movies_chord).opts(
     width=1000,
     height=1000)
 
-#hv.save(chrd,"chord.html", backend="bokeh")
+hv.save(chrd,"chord.html", backend="bokeh")
 
 # %% score decile vs other quant vars
 movies_parallel=movies[["Metascore Decile","Score","Metascore","Vote","Runtime","Revenue","Revenue/Min","Meta:Score"]]
@@ -85,7 +85,10 @@ movies_parallel_desc_norm=(movies_parallel_desc.drop("Metascore Decile", axis=1)
 movies_parallel_desc_norm["Metascore Decile"]=movies_parallel_desc_norm.index
 
 prll = parallel_coordinates(movies_parallel_desc_norm, "Metascore Decile")
-plt.show()
+prll.set_xticklabels(prll.get_xticklabels(),rotation=45)
+
+
+prll.figure.savefig("prll.png")
 
 # %%
 
