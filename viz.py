@@ -61,15 +61,14 @@ movies_chord["value"]=movies_chord.value_12+movies_chord.value_13.fillna(0).asty
 movies_chord.drop(["value_12","value_13"], 1, inplace=True)
 
 chrd = hv.Chord(movies_chord).opts(
-    title="Genre 1 to Genres 2 and 3",
     node_color='index',
     edge_color='source',
     label_index='index', 
     cmap='Category20b',
     edge_cmap='Category20b',
-    width=1000,
-    height=1000)
-
+    width=750,
+    height=750)
+hv.render(chrd,backend="bokeh")
 hv.save(chrd,"chord.html", backend="bokeh")
 
 # %% score decile vs other quant vars
@@ -88,7 +87,7 @@ prll = parallel_coordinates(movies_parallel_desc_norm, "Metascore Decile")
 prll.set_xticklabels(prll.get_xticklabels(),rotation=45)
 
 
-prll.figure.savefig("prll.png")
+#prll.figure.savefig("prll.png")
 
 # %%
 
