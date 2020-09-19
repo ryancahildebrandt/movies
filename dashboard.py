@@ -53,5 +53,5 @@ rprt = dp.Report(dp.Markdown("# 10,000 Movies Dataset Explorer"),
                  dp.Markdown("## Genre 1 -> Genre 2 & Genre 3"),
                  dp.Plot(hv.render(chrd,backend="bokeh")))
 rprt.save(path='movies_dashboard.html', open=True)
-rprt.publish(name='movies_dashboard', open=True, visibility='PUBLIC')
-#https://datapane.com/ryancahildebrandt/reports/movies_dashboard/?accesstoken=800edc196c07a9c18b4b031e709a596e8a0f8485
+#rprt.publish(name='movies_dashboard', open=True, visibility='PUBLIC')
+#https://datapane.com/ryancahildebrandt/reports/movies_dashboard_3496f91c/?accesstoken=6fc213dd792558aaf55ff7884e81b2bd34fd3d02
