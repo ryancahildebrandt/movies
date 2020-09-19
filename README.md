@@ -10,6 +10,10 @@ A project to try out different data visualization techniques (chord diagrams, in
 
 ---
 
+## *Outputs*
+
+[Here](https://datapane.com/ryancahildebrandt/reports/movies_dashboard_3496f91c/?accesstoken=6fc213dd792558aaf55ff7884e81b2bd34fd3d02) is the main report that allows for exploration and visualization of the dataset, made using Datapane
+
 ## *Status*
 
 7.3.2020 - I've gotten a lot more interactivity into the plots and got some of the plots I had made from other graphics libraries into one standalone [report](https://datapane.com/ryancahildebrandt/reports/movies_dashboard/?accesstoken=800edc196c07a9c18b4b031e709a596e8a0f8485) (*thanks Datapane!*) Next up, some analyses. What that means I have no idea at this moment.
