@@ -12,7 +12,7 @@ A project to try out different data visualization techniques (chord diagrams, in
 
 ## *Outputs*
 
-[Here](https://datapane.com/ryancahildebrandt/reports/movies_dashboard_3496f91c/?accesstoken=6fc213dd792558aaf55ff7884e81b2bd34fd3d02) is the main report that allows for exploration and visualization of the dataset, made using Datapane
+[Here](https://datapane.com/ryancahildebrandt/reports/10000_Movies_Dataset_Explorer) is the main report that allows for exploration and visualization of the dataset, made using Datapane
 
 ## *Status*
 
