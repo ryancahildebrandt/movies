@@ -6,11 +6,12 @@ Created on Sun May 10 21:12:23 2020
 @author: ryan
 """
 # %% Doc Setup
-from eda import *
-from viz import *
 import altair as alt
 import altair_viewer
 import datapane as dp
+
+from eda import *
+from viz import *
 alt.data_transformers.disable_max_rows()
 
 # %% Legends
@@ -24,7 +25,7 @@ legend_genre = alt.Chart(movies).mark_rect().encode(
     color=color
 ).add_selection(
     selection
-)
+    )
     
 # %% Charts
 sctr = alt.Chart(movies).mark_point(filled=True).encode(
@@ -53,5 +54,5 @@ rprt = dp.Report(dp.Markdown("# 10,000 Movies Dataset Explorer"),
                  dp.Markdown("## Genre 1 -> Genre 2 & Genre 3"),
                  dp.Plot(hv.render(chrd,backend="bokeh")))
 rprt.save(path='movies_dashboard.html', open=True)
-#rprt.publish(name='movies_dashboard', open=True, visibility='PUBLIC')
+#rprt.publish(name='10000_Movies_Dataset_Explorer', open=True, visibility='PUBLIC')
 #https://datapane.com/ryancahildebrandt/reports/movies_dashboard_3496f91c/?accesstoken=6fc213dd792558aaf55ff7884e81b2bd34fd3d02
