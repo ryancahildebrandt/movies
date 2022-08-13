@@ -5,13 +5,14 @@ Created on Sun May 17 15:42:46 2020
 
 @author: ryan
 """
-# %% Script setup
-from eda import *
+# Script setup
 import matplotlib
 import matplotlib.pyplot as plt
-from pandas.plotting import parallel_coordinates
 import seaborn as sns
 import squarify
+
+from eda import *
+from pandas.plotting import parallel_coordinates
 
 global jnt 
 global prll 
@@ -22,17 +23,19 @@ sns.set(style="dark",
         font="DejaVu Sans")
 
 import holoviews as hv
-from holoviews import opts, dim
-from bokeh.sampledata.les_mis import data
+
 from IPython.display import display_html
+from bokeh.sampledata.les_mis import data
+from holoviews import dim
+from holoviews import opts
 
 hv.extension("bokeh")
 
-#%%
+#
 prplt=sns.pairplot(movies)
 prplt.savefig("prplt.png")
 
-# %% score vs metascore
+# score vs metascore
 jnt = sns.jointplot(x="Score",
               y="Metascore",
               data=movies,
@@ -42,7 +45,7 @@ jnt = sns.jointplot(x="Score",
 jnt.savefig("jointplot.png")
 
 
-# %% chord- genres
+# chord- genres
 movies_genres12 = pd.crosstab(movies.Genre1, movies.Genre2)
 movies_genres13 = pd.crosstab(movies.Genre1, movies.Genre3)
 
@@ -71,7 +74,7 @@ chrd = hv.Chord(movies_chord).opts(
 hv.render(chrd,backend="bokeh")
 hv.save(chrd,"chord.html", backend="bokeh")
 
-# %% score decile vs other quant vars
+# score decile vs other quant vars
 movies_parallel=movies[["Metascore Decile","Score","Metascore","Vote","Runtime","Revenue","Revenue/Min","Meta:Score"]]
 movies_parallel_norm=(movies_parallel.drop("Metascore Decile", axis=1)-movies_parallel.drop("Metascore Decile", axis=1).mean())/movies_parallel.drop("Metascore Decile", axis=1).std()
 movies_parallel_norm["Metascore Decile"]=movies["Metascore Decile"]
@@ -89,6 +92,6 @@ prll.set_xticklabels(prll.get_xticklabels(),rotation=45)
 
 #prll.figure.savefig("prll.png")
 
-# %%
+#
 
 

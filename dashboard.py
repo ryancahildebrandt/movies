@@ -5,7 +5,7 @@ Created on Sun May 10 21:12:23 2020
 
 @author: ryan
 """
-# %% Doc Setup
+# Doc Setup
 import altair as alt
 import altair_viewer
 import datapane as dp
@@ -14,7 +14,7 @@ from eda import *
 from viz import *
 alt.data_transformers.disable_max_rows()
 
-# %% Legends
+# Legends
 selection = alt.selection_multi(fields=["Genre1"])
 color = alt.condition(selection,
                     alt.Color("Genre1:N", legend=None),
@@ -27,7 +27,7 @@ legend_genre = alt.Chart(movies).mark_rect().encode(
     selection
     )
     
-# %% Charts
+# Charts
 sctr = alt.Chart(movies).mark_point(filled=True).encode(
     alt.X("Score:Q"),
     alt.Y("Metascore:Q"),
@@ -44,7 +44,7 @@ sctr = alt.Chart(movies).mark_point(filled=True).encode(
 
 #(sctr | legend_genre).show()
 
-# %% Report
+# Report
 rprt = dp.Report(dp.Markdown("# 10,000 Movies Dataset Explorer"),
                  dp.Markdown("## Dataset"),
                  dp.Table(movies),

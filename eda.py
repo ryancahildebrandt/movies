@@ -5,11 +5,11 @@ Created on Sun May 10 20:53:20 2020
 
 @author: ryan
 """
-# %% Doc setup
-import pandas as pd
+# Doc setup
 import numpy as np
+import pandas as pd
 
-# %% Read in movies data
+# Read in movies data
 global movies
 movies = pd.read_csv("movies.csv")
 movies["Vote"]=movies["Vote"].astype("float64")
@@ -23,11 +23,11 @@ movies["Decade"]=((movies["Year"]/10).apply(np.floor))*10
 
 movies.to_csv("movies_out.csv", index=False)
 
-# %% Useful lists
+# Useful lists
 all_genres = movies["Genre1"].append(movies["Genre2"]).append(movies["Genre3"]).dropna().unique().tolist()
 all_directors = movies["Director"].dropna().unique().tolist()
 
-# %% Take a look
+# Take a look
 movies.info()
 movies.head()
 movies.describe()
