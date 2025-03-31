@@ -3,7 +3,9 @@
 ---
 
 ---
-[*Open*](https://gitpod.io/#https://github.com/ryancahildebrandt/movies) *in gitpod*
+[![Open in gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/ryancahildebrandt/movies)
+[![This project contains 0% LLM-generated content](https://brainmade.org/88x31-dark.png)](https://brainmade.org/)
+
 ## *Purpose*
 
 A project to try out different data visualization techniques (chord diagrams, interactive scatter/histogram plots) and platforms (bokeh, plotly, datapane), using [this](https://www.kaggle.com/isaactaylorofficial/imdb-10000-most-voted-feature-films-041118) dataset, which catalogues details of popular movies.
